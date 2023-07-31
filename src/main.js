@@ -37,10 +37,8 @@ class Game_RPG {
 		// Supongamos que cada frame tiene un tamaño de 64x64 píxeles y que queremos dibujar el primer frame (Frame 1).
 		const frameWidth = 80
 		const frameHeight = 183
-		// const frameX = 0 // Coordenada X del primer frame en la sprite sheet.
-		// const frameY = 0 // Coordenada Y del primer frame en la sprite sheet.
-		const frameX = this.game.width / 2 - frameWidth
-		const frameY = this.game.height / 2 - frameHeight
+		const frameX = 0 // Coordenada X del primer frame en la sprite sheet.
+		const frameY = 0 // Coordenada Y del primer frame en la sprite sheet.
 
 		const image = new Image()
 		image.src = './Assets/Personaje/Personaje.png'
@@ -50,9 +48,11 @@ class Game_RPG {
 		}
 
 		let offset = 0
+		const posicionX = this.game.width / 2 - frameWidth
+		const posicionY = this.game.height / 2 - frameHeight
 		setInterval(() => {
 			this.ctx.clearRect(0, 0, this.game.width, this.game.height)
-			this.ctx.drawImage(image, offset, frameY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight)
+			this.ctx.drawImage(image, offset, frameY, frameWidth, frameHeight, posicionX, posicionY, frameWidth, frameHeight)
 			offset += 80
 			if (offset == 480)
 				offset = 0
