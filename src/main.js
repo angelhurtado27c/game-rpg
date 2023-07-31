@@ -35,10 +35,12 @@ class Game_RPG {
 
 	initializeGameState = () => {
 		// Supongamos que cada frame tiene un tamaño de 64x64 píxeles y que queremos dibujar el primer frame (Frame 1).
-		const frameWidth = 80;
-		const frameHeight = 183;
-		const frameX = 0; // Coordenada X del primer frame en la sprite sheet.
-		const frameY = 0; // Coordenada Y del primer frame en la sprite sheet.
+		const frameWidth = 80
+		const frameHeight = 183
+		// const frameX = 0 // Coordenada X del primer frame en la sprite sheet.
+		// const frameY = 0 // Coordenada Y del primer frame en la sprite sheet.
+		const frameX = this.game.width / 2 - frameWidth
+		const frameY = this.game.height / 2 - frameHeight
 
 		const image = new Image()
 		image.src = './Assets/Personaje/Personaje.png'
@@ -49,7 +51,7 @@ class Game_RPG {
 
 		let offset = 0
 		setInterval(() => {
-			this.ctx.clearRect(0, 0, this.game.width, this.game.height);
+			this.ctx.clearRect(0, 0, this.game.width, this.game.height)
 			this.ctx.drawImage(image, offset, frameY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight)
 			offset += 80
 			if (offset == 480)
@@ -124,7 +126,7 @@ class Game_RPG {
 
 
 	renderGameState = () => {
-		this.ctx.clearRect(0, 0, this.game.width, this.game.height);
+		this.ctx.clearRect(0, 0, this.game.width, this.game.height)
 
 		this.Players.Left.render()
 		this.Players.Right.render()
@@ -138,7 +140,7 @@ class Game_RPG {
 	/*
 	gameLoop = () => {
 		this.handleInput() // Capturar la entrada del usuario
-		this.updateGameState(); // Actualizar el estado del juego
+		this.updateGameState() // Actualizar el estado del juego
 		this.renderGameState() // Renderizar el estado del juego
 
 		requestAnimationFrame(this.gameLoop)
