@@ -48,8 +48,8 @@ class Game_RPG {
 		}
 
 		let offset = 0
-		const posicionX = this.game.width / 2 - frameWidth
-		const posicionY = this.game.height / 2 - frameHeight
+		// const posicionX = this.game.width / 2 - frameWidth / 2
+		// const posicionY = this.game.height / 2 - frameHeight / 2
 		setInterval(() => {
 			this.ctx.clearRect(0, 0, this.game.width, this.game.height)
 			this.ctx.drawImage(image, offset, frameY, frameWidth, frameHeight, posicionX, posicionY, frameWidth, frameHeight)
