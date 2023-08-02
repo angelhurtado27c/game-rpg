@@ -44,7 +44,7 @@ class Game_RPG {
 		image.src = './Assets/Personaje/Personaje.png'
 		image.onload = () => {
   		// this.ctx.drawImage(image, 0, 0)
-			this.ctx.drawImage(image, frameX, frameY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight)
+			// this.ctx.drawImage(image, frameX, frameY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight)
 		}
 
 		let offset = 0
